@@ -1,5 +1,4 @@
-# Python-Essentials
-## Projects I've worked on for the Python Essentials Course (Cisco/NetAcad)
+# Projects I've worked on for the Python Essentials Course (Cisco/NetAcad)
 
 This repository contains a collection of Python programs I created while working through the Python Essentials course offered by Cisco/NetAcad.
 
