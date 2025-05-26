@@ -21,9 +21,6 @@ Author: Jordan Rodger
 Date: 26/05/2025
 """
 
-# This program demonstrates the use of bitwise operations 
-# to manipulate specific bits in a flag register using bitmasks.
-
 
 # ====== Bitmask Definitions ======
 # Bitmasks are defined using left shift for reusability and clarity
