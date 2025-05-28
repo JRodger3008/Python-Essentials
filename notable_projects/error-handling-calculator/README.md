@@ -79,7 +79,3 @@ Oops! Division by 0 is undefined in our number system.
 ## Author
 
 Jordan Rodger - [GitHub Profile](https://github.com/JRodger3008)
-
-```
-
-```
