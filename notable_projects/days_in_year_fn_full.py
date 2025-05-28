@@ -6,16 +6,18 @@ Scenario:
     a month, and a day of the month) and returns the corresponding day of the year,
     or returns None if any of the arguments is invalid.
 
-Similar to my other work, I've tried to go beyond the lab and challenge myself to write
-a more comprehensive program with graceful error handling and a test/debugging loop to
-check functionality and test edge cases.
+Like in my other projects, I've tried to go beyond the lab requirements by implementing:
+    - Graceful error handling
+    - Modular helper functions
+    - Comprehensive edge case testing with a test/debug loop
 
-Note: I've made several improvements to streamline the code and enhance clarity.
-      For example, I've used 'enumerate(zip(...))' for cleaner iteration in the test loop,
-      and simplified some logical checks (is_leap_year()) for conciseness.
+Notable Improvements:
+    - Simplified leap year logic (is_year_leap())
+    - Used 'enumerate(zip(...))' for cleaner iteration in test loops
+    - Added type checking and robust validation to avoid silent failures
 
 Author: Jordan Rodger
-Date: 08/05/2025 (Last Edit: 26/05/2025)
+Date: 08/05/2025 (Last Edit: 28/05/2025)
 """
 
 
@@ -65,7 +67,7 @@ def days_in_month(year: int, month: int) -> int | None:
         month (int): The month (1-12) for which the number of days is determined.
 
     Returns:
-        int or None: The number of days in a given month or None for invalid inputs.
+        int or None: The number of days in a given month; None for invalid input.
     """
     
     # Type validation (int)
@@ -98,7 +100,7 @@ def day_of_year(year: int, month: int, day: int) -> int | None:
         day (int): The day of the month (1-31) for which the day of the year is to be calculated
 
     Returns: 
-        int or None: The day of the year or None for invalid inputs.
+        int or None: The day of the year; None for invalid inputs.
     """
 
     # Type validation (int)
@@ -123,7 +125,7 @@ def day_of_year(year: int, month: int, day: int) -> int | None:
         if days is None:
             return None
         
-        total_days += days # Accumulate days of all months before, but not including current month
+        total_days += days # Accumulate days from previous months
     
     return total_days + day # Adds days from current month
 
@@ -145,19 +147,24 @@ test_result += [None, None, None, 366, 365, None, 60, None, None]
 
 # Test loop to verify day_of_year() against a set of test cases,
 # printing 'OK' or 'FAILED' with expected and actual results for debugging.
+
+# zip(...) combines elements from the three lists into (year, month, day) tuples.
+# enumerate(...) adds an index (i) to each tuple for accessing expected results.
 for i, (yr, mo, dy) in enumerate(zip(test_year, test_month, test_day)):
     result = day_of_year(yr, mo, dy)
 
-    # Converts None type to string
+    # Converts None type to string to avoid TypeError in f-string formatting
     expected = str(test_result[i]) if test_result[i] is not None else "None"
     actual = str(result) if result is not None else "None"
 
-    # Handle None result, without string formatting (without throwing TypeError)
+    # Match case: both expected and actual are None
     if result is None and test_result[i] is None:
         print(f"(Y: {yr:<6}, M: {mo:<4}, D: {dy:<4}) -> {expected} -> {result} -> 'OK'\n")
-    # Successful cross-refernce
+
+    # Match case: expected and actual values match
     elif result == test_result[i]:
         print(f"(Y: {yr:<6}, M: {mo:<4}, D: {dy:<4}) -> {expected:<6} -> {result:<6} -> 'OK'\n")
-    # Unsuccessful
+
+    # Mismatch case: expected and actual differ
     else:
         print(f"(Y: {yr:<6}, M: {mo:<4}, D: {dy:<4}) -> {expected:<6} -> {result:<6} -> 'FAILED'\n")
