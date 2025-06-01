@@ -18,7 +18,7 @@ Features:
     - The XOR Swap Algorithm (low-level approach), and a high-level alternative using tuple unpacking.
 
 Author: Jordan Rodger
-Date: 26/05/2025
+Created: 19/04/2025 Last Edit: 26/05/2025
 """
 
 
