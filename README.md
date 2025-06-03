@@ -29,12 +29,12 @@ Lastly, I’ve endeavored to write clear and informative documentation (docstrin
 ## Projects Overview
 
 -   [`basics`](./basics/) - Basic Python exercises; most of these were labs completed during Python Essentials 1 (PE1).
--   [`bubble-sort-algorithm`](./bubble-sort-algorithm/) - Exploration of the Bubble Sort Algorithm.
+-   [`bubble_sort_algorithm`](./bubble_sort_algorithm/) - Exploration of the Bubble Sort Algorithm.
 -   [`lists-sets-dicts-tuples`](./lists-sets-dicts-tuples/) - Implementations of Lists, Sets, Matrices, Tuples, and Dictionaries.
 -   [`functions`](./functions/) - A range of programs utilising functions.
 -   [`loops`](./loops/) - Exploration of loops; most files were labs completed during PE1.
 -   [`math`](./math/) - Exploration of math operators, `math` module, and miscellaneous mathematical programs.
--   [`notable-projects`](./notable-projects/) - Projects that go beyond and expand on the PE1 syllabus; these have been my favourites to work on so far.
+-   [`notable_projects`](./notable_projects/) - Projects that go beyond and expand on the PE1 syllabus; these have been my favourites to work on so far.
 
 ---
 
